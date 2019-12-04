@@ -1,0 +1,13 @@
+微服务概念：
+缺点：
+1.开发人员要处理分布式系统的复杂性
+2.多服务增加运维难度
+3.服务间通信成本
+4.性能监控
+。。。
+什么是springcloud：
+
+
+springcloud与dubbo的最大区别
+springcloud抛弃了Dubbo的RPC通信，采用的是基于http的REST方式
+前者牺牲了通信效率
