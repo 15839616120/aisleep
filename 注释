@@ -1,13 +1,56 @@
-微服务概念：
+day 01:
+A：应用的演变过程：
+   all in one 水平扩展--垂直拆分
+B：微服务架构4个核心问题：
+   1.服务很多，客户端该怎么访问？
+     负载均衡
+   2.服务很多，服务之间如何通信呢？
+     一般基于两种方式：http   RPC
+   3.服务很多，如何治理？
+     服务注册与服务发现机制
+   4.服务挂了怎么办？
+     容灾机制【备份等。。。】
+C:对于上述4个问题的解决方案：
+   springCloud不是一门技术，是一个生态体系，为了解决上面4个核心问题；
+
+    1.spring cloud NetFlix:一站式解决方案；
+    api 网关：zuul组件---》解决第一个核心问题
+    Feign：可以实现微服务的通信，也可以实现简单的负载均衡，feign是基于HttpClient的，即是基于http的通信方式【超文本传输协议，同步并阻塞|dubbo是同步非阻塞的】---》解决第二个核心问题
+    服务注册与发现：Eureka----》解决第三个核心问题
+    熔断机制：Hystrix----》解决第四个核心问题
+    。。。。
+
+    2.Apache Dubbo Zookeeper
+    API:没有，找第三方组件，或者自己实现；
+    Dubbo:高性能微服务通信的RPC框架
+    Zookeeper:
+    没有熔断
+
+    Dubbo这个方案并不完善，他只专注与做RPC通信
+
+    3.spring cloud Alibaba 一站式解决方案：更简单【2019年9月才正式发布使用】
+
+
+    4.新概念：服务网格--Server Mesh
+
+
+ 万变不离其中：
+  1：API
+  2.HTTP RPC
+  3.注册与发现
+  4.熔断机制
+
+网络不可靠是产生各种问题的核心难题；
+
+day02：
+A.微服务概念：
 缺点：
 1.开发人员要处理分布式系统的复杂性
 2.多服务增加运维难度
 3.服务间通信成本
 4.性能监控
 。。。
-什么是springcloud：
-
-
-springcloud与dubbo的最大区别
-springcloud抛弃了Dubbo的RPC通信，采用的是基于http的REST方式
-前者牺牲了通信效率
+B.什么是springcloud：
+  不是一门技术，是一个生态体系
+C.springcloud与dubbo的最大区别
+  springcloud抛弃了Dubbo的RPC通信【dubbo是同步非阻塞】，采用的是基于http的REST方式【超文本传输协议，同步并阻塞】，前者牺牲了通信效率。
