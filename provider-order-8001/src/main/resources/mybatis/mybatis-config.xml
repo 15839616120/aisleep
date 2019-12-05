@@ -3,6 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
    <settings>
-       <setting name="" value=""/>
+       <!--开启二级缓存【也可以不配】-->
+       <setting name="cacheEnabled" value="true"/>
    </settings>
 </configuration>
