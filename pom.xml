@@ -10,6 +10,7 @@
     <description>总的工程</description>
     <modules>
         <module>springcloud-api</module>
+        <module>provider-order-8001</module>
     </modules>
 
     <!--打包方式-->
