@@ -25,7 +25,6 @@ C:对于上述4个问题的解决方案：
     Dubbo:高性能微服务通信的RPC框架
     Zookeeper:
     没有熔断
-
     Dubbo这个方案并不完善，他只专注与做RPC通信
 
     3.spring cloud Alibaba 一站式解决方案：更简单【2019年9月才正式发布使用】
