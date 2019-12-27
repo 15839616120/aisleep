@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @RestController
+@RequestMapping("/consumer/order")
 public class OrderController {
 
     //理解：消费者，不应该有service层
@@ -24,17 +25,17 @@ public class OrderController {
     private static final String REST_URL_PREFIX="http://localhost:8001";
 
 
-    @RequestMapping("/consumer/order/get/{id}")
+    @RequestMapping("/get/{id}")
     public Order get(@PathVariable("id") Long id){
         return restTemplate.getForObject(REST_URL_PREFIX+"/order/get/"+id,Order.class);
     }
 
-    @PostMapping("/consumer/order/add/")
+    @PostMapping("/add/")
     public boolean add(Order order){
         return restTemplate.postForObject(REST_URL_PREFIX+"/order/add/",order,Boolean.class);
     }
 
-    @PostMapping("/consumer/order/list/")
+    @PostMapping("/list/")
     public List<Order> list(){
         return restTemplate.getForObject(REST_URL_PREFIX+"/order/list",List.class);
     }
