@@ -24,7 +24,6 @@ public class OrderController {
 
     private static final String REST_URL_PREFIX="http://localhost:8001";
 
-
     @RequestMapping("/get/{id}")
     public Order get(@PathVariable("id") Long id){
         return restTemplate.getForObject(REST_URL_PREFIX+"/order/get/"+id,Order.class);
