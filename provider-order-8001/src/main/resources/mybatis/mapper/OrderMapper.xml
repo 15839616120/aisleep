@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aisleep.mapper.OrderMapper">
+
+    <insert id="addOrder" parameterType="com.aisleep.pojo.Order">
+        insert into
+        order
+        (operator,address,creatTime,updateTime,delete)
+        values
+        (#{operator},#{operator},#{operator},#{operator},#{delete})
+    </insert>
+    <!--今天在查询数据的时候遇到这个错误，特别的郁闷，感觉自己写的sql语句没有问题啊，但就是提示我的sql语法错误，后来终于找到了原因.
+    该错误一般出现在表名或字段名设计的过程中出现了mysql关键字导致的。
+    如果你用了mysql中的关键字做字段，当你查询的时候可以用  `order` 来括起来，这个 ` 并不是单引号，而是数字那一行键的最左边的那个键，
+    在英文状态下的才为 ` ，用它把关键字括起来就可以解决这个问题。-->
+    <select id="queryById" resultType="com.aisleep.pojo.Order" parameterType="java.lang.Long">
+        select * from `order`
+        where
+        id = #{id}
+    </select>
+
+    <select id="queryList" resultType="com.aisleep.pojo.Order">
+        select * from order where delete = 0
+    </select>
+
+</mapper>

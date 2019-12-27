@@ -4,8 +4,8 @@ server:
 #mybatis配置
 mybatis:
   type-aliases-package: com.aisleep.pojo
-  configuration: classpath:mybatis/mapper/*.xml #这个可以省去
   mapper-locations: classpath:mybatis/mapper/*.xml
+#config-location: classpath:mybatis/mybatis-config.xml #这个【核心配置文件】可以省去
 
 #spring应用的配置
 spring:
@@ -15,7 +15,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&charaterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf-8
     username: root
     password: root
 
