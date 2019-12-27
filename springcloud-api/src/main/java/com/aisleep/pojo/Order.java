@@ -32,6 +32,6 @@ public class Order implements Serializable {
     /**
      * 链式写法
      * Order order = new Order();
-     * order.setNum(1).setAddress("")---->支持这种写法
+     * order.setNum(1).setAddress("")---->@Accessors(chain = true)支持这种写法
      */
 }
