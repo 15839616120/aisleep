@@ -71,4 +71,9 @@ A:Eureka
   而系统中的其他微服务，使用eureka客户端连接EurekaServer并维持心跳连接，这样系统的维护人员就可以
   通过eurekaServer来监控系统中各个微服务是否正常运行，SpringCloud的一些其他模块（比如zuul）就可以
   通过eurekaServer来发现系统中的其他微服务，并执行相关的逻辑。
+3.启动服务的步骤
+  a.导入依赖
+  b.编写配置文件【application.yml】
+  c.开启这个功能@EnableXXX
+  d.编写配置类
 
