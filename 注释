@@ -54,3 +54,21 @@ B.什么是springcloud：
   不是一门技术，是一个生态体系
 C.springcloud与dubbo的最大区别
   springcloud抛弃了Dubbo的RPC通信【dubbo是同步非阻塞】，采用的是基于http的REST方式【超文本传输协议，同步并阻塞】，前者牺牲了通信效率。
+
+day03:
+起始第六个视频
+A:Eureka
+1.什么是Eureka？
+  见示意图：eureka.png
+  eureka包含两个组件：EurekaServer和EurekaClient   心跳机制建立连接
+  EurekaServer提供服务注册服务，各个节点启动后，会在eurekaServer进行注册，这样eurekaServer中的服务注册表中将会
+  列出所有可用节点的信息，服务节点的信息可以在界面中直观的看到。
+  EurekaClient是一个java客户端，用于简化EurekaServer的交互，客户端同时也具备一个内置的，使用轮询负载均衡算法的
+  负载均衡器，在应用启动后，将会向EurekaServer发送心跳（默认周期为30秒），如果EurekaServer在多个心跳周期内没有
+  接收到某个节点的心跳，EurekaServer将会从服务注册中心表中把这个服务节点移除掉（默认周期为90秒）。
+2.eureka的原理：
+  eureka采用的是C-S架构设计，遵循是AP原则,EurekaServer作为服务注册功能的服务器，来实现注册中心的功能,
+  而系统中的其他微服务，使用eureka客户端连接EurekaServer并维持心跳连接，这样系统的维护人员就可以
+  通过eurekaServer来监控系统中各个微服务是否正常运行，SpringCloud的一些其他模块（比如zuul）就可以
+  通过eurekaServer来发现系统中的其他微服务，并执行相关的逻辑。
+
