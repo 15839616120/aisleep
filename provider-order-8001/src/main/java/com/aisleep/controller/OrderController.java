@@ -44,7 +44,7 @@ public class OrderController {
         List<String> server = client.getServices();
         System.out.println(server);
         //得到一个具体的微服务信息，可以得到该微服务的具体信息
-        List<ServiceInstance> list = client.getInstances("此处为微服务的名称");
+        List<ServiceInstance> list = client.getInstances("此处为微服务的名称application的名称");
         for (ServiceInstance serviceInstance : list) {
             System.out.println(
                     serviceInstance.getHost()+"\t"+
