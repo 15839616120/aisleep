@@ -19,3 +19,19 @@ spring:
     username: root
     password: root
 
+
+#eureka的配置，服务注册到哪里
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/  #服务注册到哪里
+    instance:
+      instance-id: springcloud-provider-8001 #修改eureka上默认描述信息
+
+
+#info配置
+info:
+  app.name: kuangshen-springcloud
+  company.name: blog.kuangstudy.com
+
+
