@@ -17,14 +17,17 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderMapper orderMapper;
 
+    @Override
     public boolean addOrder() {
         return orderMapper.addOrder();
     }
 
+    @Override
     public Order queryById(Long id) {
         return orderMapper.queryById(id);
     }
 
+    @Override
     public List<Order> queryList() {
         return orderMapper.queryList();
     }
